@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row">
+        <app-header (selectionChanged)='onSelectionChanged($event)'></app-header>
+    </div>
+
+    <app-recipes-wrapper *ngIf="activeView==='recipe'"></app-recipes-wrapper>
+    <app-shopping-list *ngIf="activeView==='shopping'"></app-shopping-list>
+</div>
