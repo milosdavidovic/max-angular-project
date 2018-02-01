@@ -6,6 +6,10 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <app-recipe-item [recipeData] = "rec" *ngFor = "let rec of recipes"></app-recipe-item>
+    <app-recipe-item 
+      [recipeData] = "rec" 
+      *ngFor = "let rec of recipes" 
+      (myClick)="onRecipeClick($event)">
+    </app-recipe-item>
   </div>
 </div>
