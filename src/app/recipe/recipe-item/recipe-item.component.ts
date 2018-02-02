@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class RecipeItemComponent implements OnInit {
 
   @Input() recipeData: Recipe;
-  @Output() myClick = new EventEmitter<Recipe>();
+  @Output() myClick = new EventEmitter<void>();
 
   constructor() { }
 
@@ -17,6 +17,6 @@ export class RecipeItemComponent implements OnInit {
   }
 
   onClick() {
-    this.myClick.emit(this.recipeData);
+    this.myClick.emit();
   }
 }
