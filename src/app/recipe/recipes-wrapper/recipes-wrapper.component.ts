@@ -1,10 +1,12 @@
-import { Recipe } from 'app/recipe/recipe.model';
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from 'app/recipe/recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipes-wrapper',
   templateUrl: './recipes-wrapper.component.html',
-  styleUrls: ['./recipes-wrapper.component.css']
+  styleUrls: ['./recipes-wrapper.component.css'],
+  providers: [RecipeService]
 })
 export class RecipesWrapperComponent implements OnInit {
   recipeData: Recipe;
