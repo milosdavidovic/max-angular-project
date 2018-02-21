@@ -14,12 +14,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onRecipesChosen() {
-    this.router.navigate(['recipes']);
-  }
-
-  onShoppingChosen() {
-    this.router.navigate(['shopping-list']);
-  }
 }

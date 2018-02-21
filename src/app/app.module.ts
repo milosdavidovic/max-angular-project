@@ -14,6 +14,7 @@ import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.co
 import { ShoppingListEditComponent } from './shopping/shopping-list-edit/shopping-list-edit.component';
 import { DropdownDirective } from './common/dropdown.directive';
 import { RecipeEmptyComponent } from './recipe/recipe-empty/recipe-empty.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
@@ -21,7 +22,9 @@ const appRoutes: Routes = [
     path: 'recipes', component: RecipesWrapperComponent,
     children: [
       { path: '', component: RecipeEmptyComponent },
-      { path: ':index', component: RecipeDetailComponent }
+      { path: 'new', component: RecipeEditComponent },
+      { path: ':index', component: RecipeDetailComponent },
+      { path: ':index/edit', component: RecipeEditComponent },
     ]
   },
   { path: 'shopping-list', component: ShoppingListComponent }
@@ -38,7 +41,8 @@ const appRoutes: Routes = [
     ShoppingListComponent,
     ShoppingListEditComponent,
     DropdownDirective,
-    RecipeEmptyComponent
+    RecipeEmptyComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
