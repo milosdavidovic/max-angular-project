@@ -13,9 +13,9 @@
       </div>
       <div class="row">
         <div class="col-xs-6">
-          <button type="submit" class="btn btn-success" [disabled]="!f.valid">Add</button>
-          <button class="btn btn-danger">Delete</button>
-          <button class="btn btn-primary">Clear</button>
+          <button type="submit" class="btn btn-success" [disabled]="!f.valid">{{ editMode ? "Edit" : "Add" }}</button>
+          <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+          <button type="button" class="btn btn-primary" (click)="onClear()">Clear</button>
         </div>
       </div>
     </form>
