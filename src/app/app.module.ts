@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterLink, RouterModule } from '@angular/router';
-
+import { HttpModule } from '@angular/http'
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipeItemComponent } from './recipe/recipe-item/recipe-item.component';
@@ -16,6 +16,7 @@ import { ShoppingListEditComponent } from './shopping/shopping-list-edit/shoppin
 import { DropdownDirective } from './common/dropdown.directive';
 import { RecipeEmptyComponent } from './recipe/recipe-empty/recipe-empty.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { DataStorageService } from './common/data-storage.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
@@ -48,10 +49,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, RecipeService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
