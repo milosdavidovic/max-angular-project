@@ -7,21 +7,11 @@ import { Http } from '@angular/http';
 @Injectable()
 export class RecipeService {
     recipeChanged = new Subject<Recipe[]>();
-    recipes: Recipe[];
+    recipes: Recipe[] = [];
 
     recipeSelected = new EventEmitter<Recipe>();
 
     constructor(private http: Http) {
-        this.recipes = [
-            new Recipe('Weiner Schnitzel',
-                'A schnitzel is meat, usually thinned by pounding with a meat tenderizer, that is fried in some kind of oil or fat.',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Wiener-Schnitzel02.jpg/220px-Wiener-Schnitzel02.jpg',
-                [new Ingredient('Beef', 1), new Ingredient('Eggs', 2), new Ingredient('Flower', 1)]),
-            new Recipe('Hamburger',
-                'A hamburger, beefburger or burger is a sandwich consisting of one or more cooked patties of ground meat,' +
-                'usually beef, placed inside a sliced bread roll or bun. ',
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/250px-Hamburger_%28black_bg%29.jpg',
-                [new Ingredient('Pork', 1), new Ingredient('Potato', 1), new Ingredient('Bun', 1)])];
 
     }
 

@@ -1,6 +1,7 @@
 import { Ingredient } from './../../common/ingredient.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ShoppingListService } from '../shopping-list.service';
+import { DataStorageService } from '../../common/data-storage.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -10,7 +11,8 @@ import { ShoppingListService } from '../shopping-list.service';
 export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[] = [];
   mySubscriptions: any;
-  constructor(private shoppingListservice: ShoppingListService) {
+  constructor(private shoppingListservice: ShoppingListService, 
+  private dataStorage: DataStorageService) {
 
   }
 
@@ -25,6 +27,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   onEdit(index: number) {
     this.shoppingListservice.editingStarted
       .next(index);
+  }
+
+  onSaveOrder() {
+    this.dataStorage.setShoppingList();
   }
 
   ngOnDestroy(): void {

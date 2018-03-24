@@ -20,10 +20,10 @@ export class HeaderComponent implements OnInit {
   }
 
   onSaveData() {
-    this.dataStorage.insertRecipes();
+    this.dataStorage.setRecipes();
   }
 
   onFetchData() {
-    this.dataStorage.fetchRecipes();
+    this.dataStorage.getRecipes();
   }
 }
