@@ -12,12 +12,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class RecipesWrapperComponent implements OnInit {
   recipeData: Recipe;
 
-  constructor(private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private authService: AuthService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    if (!this.authService.isAuthenticated()) {
-      this.router.navigate(['/sign-in'], { relativeTo: this.activatedRoute });
-    }
+
   }
 
 }

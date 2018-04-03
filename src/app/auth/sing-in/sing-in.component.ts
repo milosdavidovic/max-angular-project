@@ -25,7 +25,7 @@ export class SingInComponent implements OnInit {
         this.errorMessage = null;
         form.reset();
         this.authService.setToken();
-        this.router.navigate(['/recipes'], { relativeTo: this.acivatedRoute });
+        this.router.navigate(['/home'], { relativeTo: this.acivatedRoute });
       })
       .catch((error: firebase.FirebaseError) => {
         console.log(error);

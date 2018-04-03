@@ -9,30 +9,25 @@ import { HeaderComponent } from './header/header.component';
 import { DataStorageService } from './common/data-storage.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
-import { RecipeModule } from './recipe/recipe.module';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeRoutingModule } from './recipe/recipe-routing.module';
 import { SharedModule } from './common/shared-module';
 import { ShoppingRoutesModule } from './shopping/shopping-routes.module';
-import { ShoppingModule } from './shopping/shopping.module';
 import { AuthModule } from './auth/auth-module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    RecipeRoutingModule,
-    ShoppingRoutesModule,
-    AuthRoutingModule,
     AuthModule,
-    RecipeModule,
-    ShoppingModule,
     SharedModule
   ],
   providers: [
