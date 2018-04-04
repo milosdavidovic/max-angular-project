@@ -6,7 +6,8 @@ import { AuthGuardService } from "./auth/auth-guard.service";
 import { RecipeDetailComponent } from "./recipe/recipe-detail/recipe-detail.component";
 import { ShoppingListComponent } from "./shopping/shopping-list/shopping-list.component";
 import { NgModule } from "@angular/core";
-import { HomeComponent } from "./home/home.component";
+import { HomeComponent } from "./core/home/home.component";
+
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },

@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterLink, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http'
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { DataStorageService } from './common/data-storage.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
@@ -15,20 +14,19 @@ import { SharedModule } from './common/shared-module';
 import { ShoppingRoutesModule } from './shopping/shopping-routes.module';
 import { AuthModule } from './auth/auth-module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
-import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
     AuthModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   providers: [
     ShoppingListService,
